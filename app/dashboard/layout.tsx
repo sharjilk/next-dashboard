@@ -8,6 +8,7 @@ import {
   LanguageSwitcher,
 } from '@/components/dashboard';
 import { dashboardConfig } from '@/config/dashboard';
+import { ThemeModeToggle } from '@/components/common';
 
 export const metadata: Metadata = {
   title: 'Admin dashboard',
@@ -31,6 +32,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
               /> */}
               <UserNav />
               <LanguageSwitcher />
+              <span className="ml-[20px]">
+                <ThemeModeToggle />
+              </span>
             </div>
           </header>
           <div className="grid flex-1 gap-12 md:grid-cols-[200px_1fr]">

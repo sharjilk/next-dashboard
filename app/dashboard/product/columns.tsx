@@ -2,6 +2,7 @@
 
 import { ColumnDef } from '@tanstack/react-table';
 import { ArrowUpDown, MoreHorizontal, Edit, Trash2 } from 'lucide-react';
+import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -17,7 +18,12 @@ import { DataTableColumnHeader } from '@/components/common';
 // This type is used to define the shape of our data.
 export type Product = {
   id: string;
+  thumbnail: string;
   name: string;
+  type: string;
+  sku: string;
+  qty: number;
+  status: string;
   description: string;
   price: number;
 };
@@ -34,6 +40,7 @@ export const columns: ColumnDef<Product>[] = [
     ),
     cell: ({ row }) => (
       <Checkbox
+        className="ml-2"
         checked={row.getIsSelected()}
         onCheckedChange={(value) => row.toggleSelected(!!value)}
         aria-label="Select row"
@@ -43,16 +50,55 @@ export const columns: ColumnDef<Product>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: 'name',
-    header: ({ column }) => {
+    accessorKey: 'thumbnail',
+    header: 'Thumbnail',
+    cell: ({ row }) => {
+      const thumbnail: string = row.getValue('thumbnail');
+
       return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        <div className="flex items-center">
+          <Image
+            className="w-10 h-10 rounded-full object-cover"
+            src={thumbnail}
+            width={40}
+            height={40}
+            alt="Product thumbnail"
+          />
+        </div>
+      );
+    },
+  },
+  {
+    accessorKey: 'name',
+    header: 'Product Name',
+  },
+  {
+    accessorKey: 'type',
+    header: 'Type',
+  },
+  {
+    accessorKey: 'sku',
+    header: 'SKU',
+  },
+  {
+    accessorKey: 'qty',
+    header: 'Quantity',
+  },
+  {
+    accessorKey: 'status',
+    header: 'Status',
+    cell: ({ row }) => {
+      const status: string = row.getValue('status');
+      return (
+        <div
+          className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+            status === 'Enabled'
+              ? 'bg-green-100 text-green-800'
+              : 'bg-red-100 text-red-800'
+          }`}
         >
-          Product Name
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
+          {status}
+        </div>
       );
     },
   },

@@ -1,7 +1,7 @@
 import {
   ArrowDownIcon,
   ArrowUpIcon,
-  ChevronUpIcon,
+  ChevronsUpDownIcon,
   EyeIcon,
 } from 'lucide-react';
 import { Column } from '@tanstack/react-table';
@@ -47,7 +47,7 @@ const DataTableColumnHeader = <TData, TValue>({
             ) : column.getIsSorted() === 'asc' ? (
               <ArrowUpIcon className="ml-2 h-4 w-4" />
             ) : (
-              <ChevronUpIcon className="ml-2 h-4 w-4" />
+              <ChevronsUpDownIcon className="ml-2 h-4 w-4" />
             )}
           </Button>
         </DropdownMenuTrigger>
