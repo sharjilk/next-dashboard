@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const AuthenticationPage = () => {
   return (
     <>
-      <div className="container relative hidden h-full flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+      <div className="relative h-full flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
         <Link
           href="#"
           className={cn(
@@ -24,8 +24,8 @@ const AuthenticationPage = () => {
         >
           Request to create an account
         </Link>
-        <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
-          <div className="absolute inset-0 bg-zinc-900" />
+        <div className="relative md:h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
+          <div className="absolute inset-0 bg-zinc-900 login-background" />
           <div className="relative z-20 flex items-center text-lg font-medium">
             <Image src="/logo_single.svg" width={48} height={48} alt="Logo" />
             &nbsp; Acme Inc
@@ -55,7 +55,7 @@ const AuthenticationPage = () => {
               </p>
             </div> */}
             <Login />
-            <p className="px-8 text-center text-sm text-muted-foreground">
+            <p className="px-8 text-center text-sm text-muted-foreground pb-6">
               By logging in, you agree to our <br />
               <Link
                 href="#"

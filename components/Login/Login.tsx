@@ -10,10 +10,11 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import Link from 'next/link';
 
 const Login = () => {
   return (
-    <Tabs defaultValue="merchant" className="w-[400px]">
+    <Tabs defaultValue="merchant" className="w-[350px] mx-auto mt-4">
       <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger value="merchant">Merchant</TabsTrigger>
         <TabsTrigger value="admin">Admin</TabsTrigger>
@@ -21,7 +22,7 @@ const Login = () => {
 
       {/* Merchant Login */}
       <TabsContent value="merchant">
-        <Card className="w-[400px]">
+        <Card className="w-[350px]">
           <CardHeader>
             <CardTitle>Sign in as Merchant</CardTitle>
             <CardDescription>
@@ -48,14 +49,16 @@ const Login = () => {
             </form>
           </CardContent>
           <CardFooter className="flex justify-between">
-            <Button className="w-full">Sign In</Button>
+            <Link href="/dashboard" className="w-full">
+              <Button className="w-full">Sign In</Button>
+            </Link>
           </CardFooter>
         </Card>
       </TabsContent>
 
       {/* Admin Login */}
       <TabsContent value="admin">
-        <Card className="w-[400px]">
+        <Card className="w-[350px]">
           <CardHeader>
             <CardTitle>Sign in as Admin</CardTitle>
             <CardDescription>
@@ -82,7 +85,9 @@ const Login = () => {
             </form>
           </CardContent>
           <CardFooter className="flex justify-between">
-            <Button className="w-full">Sign In</Button>
+            <Link href="/dashboard" className="w-full">
+              <Button className="w-full">Sign In</Button>
+            </Link>
           </CardFooter>
         </Card>
       </TabsContent>

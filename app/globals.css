@@ -82,3 +82,13 @@ body,
     @apply bg-background text-foreground;
   }
 }
+
+.login-background {
+  background: linear-gradient(
+    68.8deg,
+    rgba(0, 0, 0, 0.95) 1.8%,
+    rgb(0, 55, 79) 31.8%,
+    rgb(9, 93, 134) 56.2%,
+    rgb(15, 155, 217) 89%
+  );
+}
