@@ -195,7 +195,7 @@ async function getData(): Promise<Product[]> {
   ];
 }
 
-const Product = async () => {
+export default async function Page() {
   const data = await getData();
 
   return (
@@ -215,6 +215,4 @@ const Product = async () => {
       </div>
     </>
   );
-};
-
-export default Product;
+}
