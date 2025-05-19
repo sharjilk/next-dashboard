@@ -63,6 +63,11 @@ export const columns: ColumnDef<Product>[] = [
             width={40}
             height={40}
             alt="Product thumbnail"
+            priority={false}
+            unoptimized={false}
+            onError={(e: any) => {
+              e.target.src = 'https://via.placeholder.com/40';
+            }}
           />
         </div>
       );

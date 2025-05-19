@@ -9,9 +9,6 @@ import {
 } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Overview, RecentSales, RecentProducts } from '@/components/dashboard';
-import { redirect } from 'next/navigation';
-import { authOptions } from '@/utils/authOptions';
-import { getServerSession } from 'next-auth/next';
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -19,13 +16,6 @@ export const metadata: Metadata = {
 };
 
 const Dashboard = async () => {
-  const session = await getServerSession(authOptions);
-
-  if (!session) {
-    redirect('/');
-  }
-
-  console.log('session', session);
 
   return (
     <>

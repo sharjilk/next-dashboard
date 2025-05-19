@@ -4,7 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ListPlus, GalleryThumbnails } from 'lucide-react';
 
-import { Product, columns } from './columns';
+import type { Product } from './columns';
+import { columns } from './columns';
 import DataTable from './data-table';
 
 export const metadata: Metadata = {
@@ -17,8 +18,7 @@ async function getData(): Promise<Product[]> {
   return [
     {
       id: '1',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/i/n/international-filmfestival-ver2.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Smart Phone',
       type: 'Configurable',
       sku: 'SKU-123',
@@ -29,8 +29,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '2',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/m/o/movie_nitght.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Webcam for laptop',
       type: 'Simple',
       sku: 'SKU-456',
@@ -41,8 +40,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '3',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/6/4/64aad6286b4e2.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Wireless Headphones',
       type: 'Simple',
       sku: 'SKU-789',
@@ -53,8 +51,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '4',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/y/o/yoga-product-01.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Travel Charger',
       type: 'Configurable',
       sku: 'SKU-101',
@@ -65,8 +62,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '5',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/y/o/yoga-product-3m-01.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Smart Phone',
       type: 'Virtual',
       sku: 'SKU-123',
@@ -77,8 +73,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '6',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/i/n/international-filmfestival-ver2.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Webcam for laptop',
       type: 'Simple',
       sku: 'SKU-456',
@@ -89,8 +84,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '7',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/m/o/movie_nitght.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Wireless Headphones',
       type: 'Simple',
       sku: 'SKU-789',
@@ -101,8 +95,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '8',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/6/4/64aad6286b4e2.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Travel Charger',
       type: 'Configurable',
       sku: 'SKU-101',
@@ -113,8 +106,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '9',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/y/o/yoga-product-01.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Smart Phone',
       type: 'Virtual',
       sku: 'SKU-123',
@@ -125,8 +117,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '10',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/y/o/yoga-product-3m-01.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Webcam for laptop',
       type: 'Simple',
       sku: 'SKU-456',
@@ -137,8 +128,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '11',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/i/n/international-filmfestival-ver2.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Wireless Headphones',
       type: 'Simple',
       sku: 'SKU-789',
@@ -149,8 +139,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '12',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/m/o/movie_nitght.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Travel Charger',
       type: 'Configurable',
       sku: 'SKU-101',
@@ -161,8 +150,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '13',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/6/4/64aad6286b4e2.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Smart Phone',
       type: 'Virtual',
       sku: 'SKU-123',
@@ -173,8 +161,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '14',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/y/o/yoga-product-01.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Webcam for laptop',
       type: 'Simple',
       sku: 'SKU-456',
@@ -185,8 +172,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '15',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/y/o/yoga-product-3m-01.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Wireless Headphones',
       type: 'Simple',
       sku: 'SKU-789',
@@ -197,8 +183,7 @@ async function getData(): Promise<Product[]> {
     },
     {
       id: '16',
-      thumbnail:
-        'https://alrajhi-urpay-demo.vaimo.net/media/catalog/product/cache/8a0eaabe2684cddf5d8989e303eb15ba/i/n/international-filmfestival-ver2.jpg',
+      thumbnail: 'https://picsum.photos/200',
       name: 'Travel Charger',
       type: 'Configurable',
       sku: 'SKU-101',

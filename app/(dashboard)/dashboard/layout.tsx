@@ -1,7 +1,6 @@
 import '../../globals.css';
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
-import AuthProvider from '@/contexts/sessionProvider';
 
 import {
   SidebarNav,
@@ -25,7 +24,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html>
       <body className={openSans.className}>
-        <AuthProvider>
           <ProgressBarProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <div className="flex min-h-screen flex-col space-y-6">
@@ -58,7 +56,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
               </div>
             </ThemeProvider>
           </ProgressBarProvider>
-        </AuthProvider>
       </body>
     </html>
   );
