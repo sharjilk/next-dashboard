@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { MainNavItem } from '@/types';
 //import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
-import useLockBody from '@/hooks/use-lock-body';
 
 interface MobileNavProps {
   items: MainNavItem[];
@@ -13,7 +12,6 @@ interface MobileNavProps {
 }
 
 const MobileNav = ({ items, children }: MobileNavProps) => {
-  useLockBody();
 
   return (
     <div
